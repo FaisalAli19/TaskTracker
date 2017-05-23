@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Rx';
 
 import "rxjs/add/operator/map"
+import "rxjs/add/operator/catch"
 import "rxjs/add/operator/filter"
 
 @Injectable()
@@ -23,6 +24,11 @@ export class TasksService {
 	getTask(path, id): Observable<any> {
 		return this._http.get(`${this.Url}/${path}/${id}`)
 			.map(res => res.json())
+			.catch((err: any) => {
+				if(err.status == 404){
+					return Observable.throw(new Error(err.status));
+				}
+			})
 	}
 
 	// Add the new task to server

@@ -91,6 +91,8 @@ export class TaskFormComponent implements OnInit {
                     estimate: res.estimate,
                     state: res.state
                 })
+            }, err => {
+                this._router.navigateByUrl("/")
             })
     }
 

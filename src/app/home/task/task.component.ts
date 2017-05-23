@@ -50,7 +50,7 @@ export class TaskComponent implements OnInit, DoCheck {
         let path = `/${data.state}`
 
         // display a confirmation message
-        let conf = confirm("Are you sure you want to delete this task.");
+        let conf = confirm("Are you sure you want to delete this task?");
 
         //if conf is true then delete the task else do nothing
         if(conf){
