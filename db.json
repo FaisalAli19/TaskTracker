@@ -1,0 +1,29 @@
+{
+  "planned": [
+    {
+      "name": "Planned Task",
+      "description": "This is a Planned tasked",
+      "estimate": "1",
+      "state": "planned",
+      "id": 1
+    }
+  ],
+  "inprogress": [
+    {
+      "name": "In Progress Task",
+      "description": "This is a In progress task",
+      "estimate": "1",
+      "state": "inprogress",
+      "id": 1
+    }
+  ],
+  "completed": [
+    {
+      "name": "Completed Task",
+      "description": "This is a completed task",
+      "estimate": "2",
+      "state": "completed",
+      "id": 1
+    }
+  ]
+}

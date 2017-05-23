@@ -1,0 +1,26 @@
+.empty {
+	color: #ccc;
+}
+
+.well {
+	.detail {
+    	display: flex;
+    	justify-content: space-between;
+	}
+	h3 {
+    	margin-top: 0;
+	}
+	p {
+    	margin-bottom: 15px;
+	}
+	.button {
+    	margin-top: 15px;
+    	display: flex;
+    	justify-content: space-between;
+	}
+}
+
+.label {
+	font-size: 12px;
+	padding: 5px;
+}

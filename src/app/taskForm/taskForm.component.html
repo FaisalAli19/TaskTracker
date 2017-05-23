@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h2 class="text-center">{{ title }}</h2>
+		<form [formGroup]="taskForm" (ngSubmit)="submitForm()" class="form">
+			<div class="form-group">
+				<label>Task Name</label>
+				<input type="text" class="form-control" formControlName="name">
+			</div>
+			<!--Will display error if not valid-->
+			<div class="error" *ngIf="taskForm.controls['name'].touched && !taskForm.controls['name'].valid">
+				<p>Minimum 5 charactors task name is required</p>
+			</div>
+
+			<div class="form-group">
+				<label>Task Description</label>
+				<textarea type="text" class="form-control" formControlName="description"></textarea>
+			</div>
+			<!--Will display error if not valid-->
+			<div class="error" *ngIf="taskForm.controls['description'].touched && !taskForm.controls['description'].valid">
+				<p>Minimum 10 charactors task description required</p>
+			</div>
+
+			<div class="form-group">
+				<label>Task Estimate in Hrs</label>
+				<input type="text" class="form-control" formControlName="estimate">
+			</div>
+			<!--Will display error if not valid-->
+			<div class="error" *ngIf="taskForm.controls['estimate'].errors">
+				<p *ngIf="taskForm.controls['estimate'].touched && taskForm.controls['estimate'].errors.required">Task estimate is required</p>
+				<p *ngIf="taskForm.controls['estimate'].errors.pattern">Task estimate should be number</p>
+			</div>
+
+			<div class="form-group">
+				<label>Task State</label>
+				<select class="form-control" formControlName="state">
+					<option value="planned">Planned</option>
+					<option value="inprogress">In Progress</option>
+					<option value="completed">Completed</option>
+				</select>
+			</div>
+			<!--Will display error if not valid-->
+			<div class="error" *ngIf="taskForm.controls['state'].touched && !taskForm.controls['state'].valid">
+				<p>Task state is required</p>
+			</div>
+
+			<button 
+				type="submit" 
+				class="btn btn-primary btn-block" 
+				[disabled]="!taskForm.valid"
+				*ngIf="formType === 'addTask'; else: update"
+				>Add Task</button>
+
+			<ng-template #update>
+				<div class="flex">
+					<a class="btn btn-primary" (click)="onBack()">Back</a>
+					<button type="submit" class="btn btn-success" [disabled]="!taskForm.valid">update Task</button>
+				</div>
+			</ng-template>
+		</form>
+	</div>
+</div>
+

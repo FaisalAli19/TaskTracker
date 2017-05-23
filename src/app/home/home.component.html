@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-4">
+        <app-task 
+            [title]="titles[0]"
+            [tasks]="tasksList.planned"
+            (notifyDelete)="onDelete()"
+            ></app-task>
+    </div>
+    <div class="col-md-4">
+        <app-task [title]="titles[1]" [tasks]="tasksList.inprogress" (notifyDelete)="onDelete()"></app-task>
+    </div>
+    <div class="col-md-4">
+        <app-task [title]="titles[2]" [tasks]="tasksList.completed" (notifyDelete)="onDelete()"></app-task>
+    </div>
+</div>

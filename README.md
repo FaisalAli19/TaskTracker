@@ -1,28 +1,59 @@
 # TaskTracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+Task Tracker is a project management application. This visual tool will organize your works, travel plans and just about anything.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development purposes.
 
-## Code scaffolding
+Clone the repository from here: https://github.com/FaisalAli19/TaskTracker.git or Download the Zip file to your machine.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+### Prerequisites
 
-## Build
+What things you need to install before running the development environment.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+NodeJs
+NPM 
+```
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A step by step series of examples that tell you how to get a development env running.
 
-## Running end-to-end tests
+#### Installing dependencies
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Before running the below commands make sure you are in the root of the repository folder.
 
-## Further help
+Note: Yarn is recommended but if you don't have yarn installed you can use npm command to install all the dependencies.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+yarn install
+or
+npm install
+```
+
+#### Running Mock Rest Api
+
+Below command will run a fake Restful Api server using json-server.
+
+Note: Before running this command make sure you are in the root of the folder.
+
+```
+json-server --watch db.json
+```
+
+#### Running dev server
+
+Below command will compile the project and start the server at http://localhost:4200 
+
+```
+npm start
+```
+
+## Built With
+
+* [Angular 4](https://angular.io/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Json-server](https://github.com/typicode/json-server)
+

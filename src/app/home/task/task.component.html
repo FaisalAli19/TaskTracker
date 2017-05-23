@@ -1,0 +1,28 @@
+<div class="panel panel-info">
+	<div class="panel-heading">{{ title }}</div>
+	<div class="panel-body">
+		<div class="planned-content" *ngIf="tasks && tasks.length !== 0; else nothing">
+			<div class="well" *ngFor="let task of tasks">
+				<h3 href="#">{{ task.name }}</h3>
+				<p> {{ task.description }} </p>
+				<div class="detail">
+					<div class="label label-success">Estimate in Hrs: {{ task.estimate }}</div>
+					<div class="label label-primary">Current State: {{ task.state }}</div>
+				</div>
+				<span class="hidden"></span>
+				<div class="button" id="{{ task.id }}">
+					<a class="btn btn-primary" [routerLink]="['/updateTask', task.state, task.id]">Update</a>
+					<button class="btn btn-danger" (click)="deleteTask(task)">Delete</button>
+				</div>
+			</div>
+		</div>
+		<ng-template #nothing>
+			<div class="text-center">
+				<span class="empty">List is empty</span>
+			</div>
+		</ng-template>
+	</div>
+	<div class="panel-footer" *ngIf="totalEstimate">
+		<span>Total Estimate in Hrs: {{ totalEstimate }}</span>
+	</div>
+</div>
